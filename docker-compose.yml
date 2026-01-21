@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  copfinder:
+    build: .
+    container_name: copfinder
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    volumes:
+      # Монтируем директории для сохранения данных между перезапусками
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./artifacts:/app/artifacts
+      - ./config:/app/config
+    # Ограничения ресурсов
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 1G
+

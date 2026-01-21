@@ -1,0 +1,110 @@
+{
+  "timezone": "Europe/Kiev",
+  "searches": [
+    {
+      "label": "AUDI",
+      "url": "https://www.iaai.com/Search?url=qJLwwE2DYoPrtZ9Xl3dnIDKmThMoTC7JkoxYsTQb3Jc%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 9
+    },
+    {
+      "label": "MERCEDES",
+      "url": "https://www.iaai.com/Search?url=PpM5bZmpIw4JTwZ0OFOiQSYXAzJnEJEGE%2bpkVuQMIJ4%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 7
+    },
+    {
+      "label": "BMW",
+      "url": "https://www.iaai.com/Search?url=5ebR7Cd9WtYnfp2BE64LOnKzIJkdNh5hRYZPaTZGqrQ%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 2
+    },
+    {
+      "label": "PORSCHE",
+      "url": "https://www.iaai.com/Search?url=iDU34EPBKb0x4w%2fk1IGPKNhnS9ion4ik3E%2b4m70p1bk%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 11
+    },
+    {
+      "label": "LAND ROVER",
+      "url": "https://www.iaai.com/Search?url=tVEP063X3X6FuPdJ8J%2bAOsbzlxglZmkKGNMEyn7Fq9g%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 13
+    },
+    {
+      "label": "JAGUAR",
+      "url": "https://www.iaai.com/Search?url=UKoGmx3LM8Sk82PCSdLgeyzP2lMelUYITpADE3VDJQ4%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 17
+    },
+    {
+      "label": "NISSAN",
+      "url": "https://www.iaai.com/Search?url=DrQHa0SbWQyNgAAwB3rU12qUNSs4%2fgKZSgKioUu%2fc%2fg%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 16
+    },
+    {
+      "label": "MAZDA",
+      "url": "https://www.iaai.com/Search?url=v8HkTUWdOT4xKzOZvfGaTrk7glaa7u6ZavYA1ve4Cgg%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 14
+    },
+    {
+      "label": "LEXUS",
+      "url": "https://www.iaai.com/Search?url=1JUnQ6j36inJ7S1q7fcwphig84Gjy7%2bfcug4%2fhgWBoY%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 12
+    },
+    {
+      "label": "TESLA",
+      "url": "https://www.iaai.com/Search?url=gOhpt8FX78EHoXjMFa62oUMQNWajmbSWs6SPrD4d0YU%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 8
+    },
+    {
+      "label": "VOLKSWAGEN",
+      "url": "https://www.iaai.com/Search?url=weT7siwtTlG9t17nosFGRAsvx0dinbX8%2bK8DihUsOwU%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 10
+    },
+    {
+      "label": "FORD",
+      "url": "https://www.iaai.com/Search?url=tTELn6htPiM2esEF1bNVDWN4QBqMNPlnotSD5zprMnc%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 15
+    },
+    {
+      "label": "Toyota",
+      "url": "https://www.iaai.com/Search?url=MvZXvRYH9wiZfmssJMMDUw3bk7ECjimOIZHTqk%2fVdqg%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 8212
+    },
+    {
+      "label": "KIA",
+      "url": "https://www.iaai.com/Search?url=oPz2s0qSqnUuOS5T8ByniprDUqhrEsRhqd55vRDb83c%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 8208
+    },
+    {
+      "label": "Hyundai",
+      "url": "https://www.iaai.com/Search?url=bpH5sJoA5x7lAK1yH50%2foeMoZsn5Q%2bu6VJF1mqN7V%2fs%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 8210
+    },
+    {
+      "label": "Dodge",
+      "url": "https://www.iaai.com/Search?url=%2fy7xU2dthO%2fCUYdhlQWkFaPZIfZIYl71JNfZa46Z63E%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 11044
+    },
+    {
+      "label": "Jeep",
+      "url": "https://www.iaai.com/Search?url=fpLtlUHg2zfeEdjnKnR9K8Gwa88GNRgY6DLTwopfYKU%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 11046
+    }
+  ],
+  "notifyWhenEmpty": false,
+  "runOnStartup": false,
+  "cleanupCron": "0 0 * * 0"
+}

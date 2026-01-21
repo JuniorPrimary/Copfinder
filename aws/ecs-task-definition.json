@@ -1,0 +1,50 @@
+{
+  "family": "copfinder",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "copfinder",
+      "image": "YOUR_ECR_REPO_URI:latest",
+      "essential": true,
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "COPART_TELEGRAM_BOT_TOKEN",
+          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:copfinder/copart-bot-token"
+        },
+        {
+          "name": "COPART_TELEGRAM_CHAT_ID",
+          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:copfinder/copart-chat-id"
+        },
+        {
+          "name": "TELEGRAM_BOT_TOKEN",
+          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:copfinder/iaai-bot-token"
+        },
+        {
+          "name": "TELEGRAM_CHAT_ID",
+          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:copfinder/iaai-chat-id"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/copfinder",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "mountPoints": []
+    }
+  ]
+}
+

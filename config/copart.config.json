@@ -1,0 +1,102 @@
+{
+  "timezone": "Europe/Kiev",
+  "searches": [
+    {
+      "label": "BMW",
+      "url": "https://www.copart.com/lotSearchResults?free=false&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MISC%22:%5B%22%23VehicleTypeCode:VEHTYPE_V%22,%22%23MakeCode:BMW%20OR%20%23MakeDesc:BMW%22,%22member_lot_condition:SALVAGE%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,BMW,Category:SALVAGE&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764005892859",
+      "cron": "0 11 * * *",
+      "messageThreadId": 2
+    },
+    {
+      "label": "AUDI",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764083280705&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22AUDI%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 9
+    },
+    {
+      "label": "MERCEDES",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764083478308&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22MERCEDES-BENZ%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 7
+    },
+    {
+      "label": "PORSCHE",
+      "url": "https://www.copart.com/lotSearchResults?free=false&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22PORSCHE%5C%22%22%5D,%22MISC%22:%5B%22%23VehicleTypeCode:VEHTYPE_V%22,%22member_lot_condition:SALVAGE%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,BMW,Category:SALVAGE&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764088189539",
+      "cron": "0 11 * * *",
+      "messageThreadId": 11
+    },
+    {
+      "label": "LAND ROVER",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764083605524&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22LAND%20ROVER%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 13
+    },
+    {
+      "label": "JAGUAR",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1765146801531&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22JAGUAR%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 17
+    },
+    {
+      "label": "NISSAN",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1765146846902&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22NISSAN%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 16
+    },
+    {
+      "label": "MAZDA",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1765146889747&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22MAZDA%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 14
+    },
+    {
+      "label": "LEXUS",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1765146931826&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ENGN%22:%5B%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.4L%20%204%5C%22%22,%22engine:%5C%222.5L%20%204%5C%22%22,%22engine:%5C%223.0L%20%206%5C%22%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22LEXUS%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 12
+    },
+    {
+      "label": "TESLA",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1765146954848&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22TESLA%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D%7D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 8
+    },
+    {
+      "label": "VOLKSWAGEN",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764083799322&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22VOLKSWAGEN%5C%22%22%5D,%22ENGN%22:%5B%22engine:%5C%221.4L%20%204%5C%22%22,%22engine:%5C%221.5L%20%204%5C%22%22,%22engine:%5C%222%20%20L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 10
+    },
+    {
+      "label": "FORD",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%2080000%5D,%5B2018%20TO%202026%5D,Audi&from=%2FvehicleFinder&fromSource=widget&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1764083829373&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22ENGN%22:%5B%22engine:%5C%221.0L%20%203%5C%22%22,%22engine:%5C%221.5L%20%203%5C%22%22,%22engine:%5C%221.5L%20%204%5C%22%22,%22engine:%5C%221.6L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.3L%20%204%5C%22%22,%22engine:%5C%222.5L%20%204%5C%22%22,%22engine:%5C%222.7L%20%206%5C%22%22,%22engine:%5C%223.0L%20%206%5C%22%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22FORD%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 15
+    },
+    {
+      "label": "Toyota",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%209999999%5D,%5B2018%20TO%202026%5D,Toyota&from=%2FvehicleFinder&fromSource=widget&qId=031576fb-6afd-445c-a48e-736f51c7e3ca-1765496954134&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22VEHT%22:%5B%22vehicle_type_code:VEHTYPE_V%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22TOYOTA%5C%22%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22ENGN%22:%5B%22engine:%5C%221.5L%20%204%5C%22%22,%22engine:%5C%221.8L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.4L%20%204%5C%22%22,%22engine:%5C%222.5L%20%204%5C%22%22,%22engine:%5C%222.7L%20%204%5C%22%22,%22engine:%5C%223.0L%20%206%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22TMTP%22:%5B%22transmission_type:%5C%22AUTOMATIC%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 8212
+    },
+    {
+      "label": "KIA",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%209999999%5D,%5B2018%20TO%202026%5D,KIA&from=%2FvehicleFinder&fromSource=widget&qId=031576fb-6afd-445c-a48e-736f51c7e3ca-1765497078616&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22VEHT%22:%5B%22vehicle_type_code:VEHTYPE_V%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22KIA%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22TMTP%22:%5B%22transmission_type:%5C%22AUTOMATIC%5C%22%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22ENGN%22:%5B%22engine:%5C%220%5C%22%22,%22engine:%5C%221.6L%20%204%5C%22%22,%22engine:%5C%222%20%20L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.4L%20%204%5C%22%22,%22engine:%5C%222.5L%20%204%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 8208
+    },
+    {
+      "label": "Hyundai",
+      "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%209999999%5D,%5B2018%20TO%202026%5D,Hyundai&from=%2FvehicleFinder&fromSource=widget&qId=031576fb-6afd-445c-a48e-736f51c7e3ca-1765497211567&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22VEHT%22:%5B%22vehicle_type_code:VEHTYPE_V%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22HYUNDAI%5C%22%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22ENGN%22:%5B%22engine:%5C%221.6L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.4L%20%204%5C%22%22,%22engine:%5C%222.5L%20%204%5C%22%22%5D,%22TMTP%22:%5B%22transmission_type:%5C%22AUTOMATIC%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 8210
+    }
+  ],
+  "notifyWhenEmpty": false,
+  "runOnStartup": false,
+  "startupDelayBetweenSearches": 20000,
+  "headless": true,
+  "maxScrollSteps": 10,
+  "scrollPauseMs": 1200,
+  "proxy": null
+}

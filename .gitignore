@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+dev.env
+
+# Logs
+logs/
+*.log
+
+# Data
+data/*.json
+!data/.gitkeep
+
+# Artifacts
+artifacts/
+debug.html
+
+# PM2
+.pm2/
+
+# OS
+.DS_Store
+Thumbs.db
+
