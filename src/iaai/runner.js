@@ -127,15 +127,13 @@ export async function runIaaiSearch(search, ctx) {
       // Сохраняем в Redis напрямую (Redis автоматически установит TTL)
       await addSent(normalizedLotUrl);
       console.log(`[${label}] Лот отправлен и сохранен в Redis: ${normalizedLotUrl} (оригинал: ${lot.url})`);
-      // Задержка 3 секунды между отправками, чтобы избежать Rate Limit от Telegram
-      // Увеличено с 2 до 3 секунд для снижения частоты 429 ошибок
-      await delay(3000);
+      // Задержка 6 секунд между отправками (Telegram ~20 msg/мин в группу; при Copart+IAAI 6 сек безопаснее)
+      await delay(6000);
     } catch (error) {
       console.error(`[${label}] Ошибка при отправке лота ${lot.url}:`, error.message || error);
       // Не добавляем в Set при ошибке, чтобы можно было повторить попытку
-      // Продолжаем со следующим лотом
-      // Задержка 5 секунд при ошибке, чтобы не перегружать Telegram API
-      await delay(5000);
+      // При ошибке (в т.ч. 429) ждём дольше перед следующим лотом
+      await delay(15000);
     }
   }
 

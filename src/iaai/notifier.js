@@ -32,7 +32,16 @@ export class TelegramNotifier {
   }
 }
 
+// Общий cooldown после 429: следующий send ждёт, чтобы не бить по лимиту снова (Copart и IAAI в одном чате)
+const COOLDOWN_KEY = '__telegramCooldownUntil';
+
 async function sendWithRetry(sendFn, maxRetries = 5) {
+  if (typeof globalThis[COOLDOWN_KEY] === 'number' && Date.now() < globalThis[COOLDOWN_KEY]) {
+    const waitMs = globalThis[COOLDOWN_KEY] - Date.now();
+    console.log(`[Telegram] Ожидание ${Math.ceil(waitMs / 1000)} сек после недавнего 429…`);
+    await delay(waitMs);
+  }
+
   let attempt = 0;
 
   while (attempt <= maxRetries) {
@@ -87,22 +96,33 @@ async function sendWithRetry(sendFn, maxRetries = 5) {
       let retryAfter = 30; // По умолчанию 30 секунд
 
       if (is429) {
-        // Для 429 используем retry_after из ответа Telegram
+        // Для 429 используем retry_after из ответа Telegram (обязательно ждём указанное время)
         try {
-          const body = err.response && err.response.body;
-          if (body && body.parameters && body.parameters.retry_after) {
+          let body = err.response && err.response.body;
+          if (typeof body === 'string') {
+            try {
+              body = JSON.parse(body);
+            } catch {
+              body = null;
+            }
+          }
+          if (body && body.parameters && typeof body.parameters.retry_after === 'number') {
             retryAfter = body.parameters.retry_after;
           } else {
             const m = errorMessage.match(/retry after (\d+)/i);
             if (m) retryAfter = Number(m[1]);
           }
-          // Добавляем небольшой буфер к retry_after для безопасности
-          retryAfter = Math.max(retryAfter + 2, 5);
+          // Буфер +2 сек, минимум 5. Не уменьшаем retry_after от Telegram.
+          retryAfter = Math.max((retryAfter || 30) + 2, 5);
+          // Cooldown для следующего send (общий для Copart/IAAI): retry_after + 30 сек
+          globalThis[COOLDOWN_KEY] = Date.now() + (retryAfter + 30) * 1000;
         } catch {
-          // ignore
+          const m = String(err?.message || '').match(/retry after (\d+)/i);
+          if (m) {
+            retryAfter = Math.max(Number(m[1]) + 2, 5);
+            globalThis[COOLDOWN_KEY] = Date.now() + (retryAfter + 30) * 1000;
+          }
         }
-        // Для 429 ошибок используем экспоненциальную задержку с базовым значением
-        retryAfter = Math.max(retryAfter, Math.min(Math.pow(2, attempt) * 10, 120));
       } else {
         // Для сетевых ошибок используем экспоненциальную задержку
         // 2^attempt секунд: 2, 4, 8, 16, 32 секунды
