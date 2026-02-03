@@ -1,8 +1,25 @@
 import { fetchHtml } from './fetcher.js';
 import { parseLots } from './parser.js';
 import { loadSentLots, saveSentLots, addSent } from './sentStore.js';
+import { getDeliveryTotal } from '../services/easyhaul.js';
 import { escapeHtml } from '../utils/html.js';
 import { delay } from '../utils/delay.js';
+
+/**
+ * Извлекает номер лота из URL (например /VehicleDetail/43931728 → 43931728)
+ */
+function extractLotNumberFromUrl(url) {
+  if (!url) return null;
+  try {
+    const pathname = new URL(url.trim()).pathname;
+    const segments = pathname.split('/').filter(Boolean);
+    const lastSegment = segments[segments.length - 1];
+    const match = lastSegment && String(lastSegment).match(/\d+/);
+    return match ? match[0] : null;
+  } catch (e) {
+    return null;
+  }
+}
 
 /**
  * Нормализует URL для корректного сравнения
@@ -79,7 +96,9 @@ export async function runIaaiSearch(search, ctx) {
   }
 
   for (const lot of newLots) {
-    const caption = buildCaption(lot);
+    const lotNumber = extractLotNumberFromUrl(lot.url);
+    const deliveryTotal = lotNumber != null ? await getDeliveryTotal(lotNumber, 2) : null;
+    const caption = buildCaption(lot, deliveryTotal);
 
     try {
       if (lot.imageUrl) {
@@ -140,7 +159,7 @@ export async function runIaaiSearch(search, ctx) {
   return { total: lots.length, sent: newLots.length };
 }
 
-function buildCaption(lot) {
+function buildCaption(lot, deliveryTotal = null) {
   const lines = [];
   lines.push(`🚗 <b>${escapeHtml(lot.title || 'Без назви')}</b>`);
   if (lot.year) lines.push(`Рік: <b>${escapeHtml(lot.year)}</b>`);
@@ -154,6 +173,9 @@ function buildCaption(lot) {
   );
   if (lot.url) {
     lines.push(`Лінк: <a href="${escapeHtml(lot.url)}">Відкрити лот</a>`);
+  }
+  if (deliveryTotal != null) {
+    lines.push(`Оріентовна ціна доставки до Клайпеди - ${deliveryTotal}`);
   }
   lines.push('За детальним розрахунком авто в Україні/Польщі - @Valeriy0592');
   return lines.join('\n');

@@ -1,6 +1,7 @@
 import { fetchHtml } from './fetcher.js';
 import { parseLots } from './parser.js';
 import { loadSeen, saveSeen, hasSeen, addSeen } from './seenStore.js';
+import { getDeliveryTotal } from '../services/easyhaul.js';
 import { escapeHtml } from '../utils/html.js';
 import { delay } from '../utils/delay.js';
 
@@ -103,7 +104,8 @@ export async function runCopartSearch(search, ctx) {
   }
 
   for (const lot of newLots) {
-    const caption = buildCaption(lot);
+    const deliveryTotal = await getDeliveryTotal(lot.lotId != null ? String(lot.lotId) : '', 1);
+    const caption = buildCaption(lot, deliveryTotal);
 
     try {
       if (lot.imageUrl) {
@@ -165,7 +167,7 @@ export async function runCopartSearch(search, ctx) {
   return { total: lots.length, sent: newLots.length };
 }
 
-function buildCaption(lot) {
+function buildCaption(lot, deliveryTotal = null) {
   const lines = [];
   lines.push(`🚗 <b>${escapeHtml(lot.title || 'Без назви')}</b>`);
   if (lot.year) {
@@ -181,6 +183,9 @@ function buildCaption(lot) {
   }
   if (lot.url) {
     lines.push(`Лінк: <a href="${escapeHtml(lot.url)}">Відкрити лот</a>`);
+  }
+  if (deliveryTotal != null) {
+    lines.push(`Оріентовна ціна доставки до Клайпеди - ${deliveryTotal}`);
   }
   lines.push('За детальним розрахунком авто в Україні/Польщі - @Valeriy0592');
   return lines.join('\n');
