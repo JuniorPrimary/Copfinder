@@ -61,6 +61,22 @@ export function parseLots(html) {
       }
     }
 
+    // Номер лота (Stock #): ищем в data-list по метке "Stock #" (span.data-list_label + span.data-list_value)
+    let lotNumber = null;
+    const stockLi = row.find('li.data-list_item').filter((_, el) => {
+      const label = $(el).find('span.data-list_label').first().text().trim();
+      return /Stock\s*#/i.test(label);
+    }).first();
+    if (stockLi.length) {
+      const value = stockLi.find('span.data-list_value').first().text().trim().replace(/\s+/g, '');
+      if (value) lotNumber = value;
+    }
+    // Fallback: из URL ссылки на лот (например /VehicleDetail/43355085)
+    if (!lotNumber && href) {
+      const pathMatch = href.match(/\/VehicleDetail\/(\d+)/);
+      if (pathMatch) lotNumber = pathMatch[1];
+    }
+
     lots.push({
       title,
       year,
@@ -68,6 +84,7 @@ export function parseLots(html) {
       imageUrl,
       buyNow,
       odometer,
+      lotNumber: lotNumber || undefined,
     });
   });
 

@@ -96,8 +96,8 @@ export async function runIaaiSearch(search, ctx) {
   }
 
   for (const lot of newLots) {
-    const lotNumber = extractLotNumberFromUrl(lot.url);
-    const deliveryTotal = lotNumber != null ? await getDeliveryTotal(lotNumber, 2) : null;
+    const lotNumber = lot.lotNumber != null ? String(lot.lotNumber) : extractLotNumberFromUrl(lot.url);
+    const deliveryTotal = lotNumber ? await getDeliveryTotal(lotNumber, 2) : null;
     const caption = buildCaption(lot, deliveryTotal);
 
     try {
