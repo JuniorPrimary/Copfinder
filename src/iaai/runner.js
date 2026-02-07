@@ -175,7 +175,7 @@ function buildCaption(lot, deliveryTotal = null) {
     lines.push(`Лінк: <a href="${escapeHtml(lot.url)}">Відкрити лот</a>`);
   }
   if (deliveryTotal != null) {
-    lines.push(`Оріентовна ціна доставки до Клайпеди - ${deliveryTotal}`);
+    lines.push(`Оріентовна ціна доставки до Клайпеди - <b>$${deliveryTotal}</b>`);
   }
   lines.push('За детальним розрахунком авто в Україні/Польщі - @Valeriy0592');
   return lines.join('\n');
