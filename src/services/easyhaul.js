@@ -24,6 +24,7 @@ export async function getDeliveryTotal(lotNumber, auction) {
     });
 
     if (stockRes.status !== 200 || !stockRes.data || !Array.isArray(stockRes.data.vehicles)) {
+      console.warn('[EasyHaul] vehicle-vin-stock: bad response or no vehicles', { lot, auction, status: stockRes.status });
       return null;
     }
 
@@ -31,6 +32,7 @@ export async function getDeliveryTotal(lotNumber, auction) {
     const vehicle = vehicles.find((v) => Number(v.auction) === Number(auction));
     const zip = vehicle?.location?.zip;
     if (!zip) {
+      console.warn('[EasyHaul] no vehicle/zip for auction', { lot, auction });
       return null;
     }
 
@@ -49,16 +51,19 @@ export async function getDeliveryTotal(lotNumber, auction) {
     });
 
     if (quoteRes.status !== 200 || !quoteRes.data?.quote) {
+      console.warn('[EasyHaul] quote: bad response or no quote', { lot, auction, status: quoteRes.status });
       return null;
     }
 
     const total = quoteRes.data.quote.total;
     if (typeof total !== 'number') {
+      console.warn('[EasyHaul] quote.total is not a number', { lot, auction });
       return null;
     }
 
     return total + DELIVERY_FEE;
-  } catch {
+  } catch (err) {
+    console.warn('[EasyHaul] request failed', { lot, auction, message: err?.message });
     return null;
   }
 }
