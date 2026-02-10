@@ -76,7 +76,7 @@ export function parseLots(html) {
       const pathMatch = href.match(/\/VehicleDetail\/(\d+)/);
       if (pathMatch) lotNumber = pathMatch[1];
     }
-
+   
     lots.push({
       title,
       year,
