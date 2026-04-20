@@ -90,6 +90,18 @@
       "url": "https://www.copart.com/lotSearchResults?free=false&displayStr=AUTOMOBILE,%5B0%20TO%209999999%5D,%5B2018%20TO%202026%5D,Hyundai&from=%2FvehicleFinder&fromSource=widget&qId=031576fb-6afd-445c-a48e-736f51c7e3ca-1765497211567&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22VEHT%22:%5B%22vehicle_type_code:VEHTYPE_V%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22HYUNDAI%5C%22%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2080000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202026%5D%22%5D,%22ENGN%22:%5B%22engine:%5C%221.6L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.4L%20%204%5C%22%22,%22engine:%5C%222.5L%20%204%5C%22%22%5D,%22TMTP%22:%5B%22transmission_type:%5C%22AUTOMATIC%5C%22%22%5D%7D,%22searchName%22:%22%22,%22watchListOnly%22:false,%22freeFormSearch%22:false%7D",
       "cron": "0 11 * * *",
       "messageThreadId": 8210
+    },
+    {
+      "label": "Jeep",
+      "url": "https://www.copart.com/vehicle-search-make/jeep?displayStr=Jeep&from=%2F&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1776702718495&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22JEEP%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2070000%5D%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202027%5D%22%5D%7D,%22sort%22:%5B%22relevancy%20desc%22,%22auction_date_type%20desc%22,%22auction_date_utc%20asc%22%5D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 11046
+    },
+    {
+      "label": "Subaru",
+      "url": "https://www.copart.com/vehicle-search-make/subaru?displayStr=Subaru&from=%2F&qId=a094044d-fd0a-11e9-a583-48df3771ed50-1776702347441&searchCriteria=%7B%22query%22:%5B%22*%22%5D,%22filter%22:%7B%22ENGN%22:%5B%22engine:%5C%222.5L%20%204%5C%22%22,%22engine:%5C%222.0L%20%204%5C%22%22,%22engine:%5C%222.0L%204%5C%22%22,%22engine:%5C%222.4L%20%204%5C%22%22,%22engine:%5C%222.4L%204%5C%22%22,%22engine:%5C%222.5L%204%5C%22%22%5D,%22FETI%22:%5B%22buy_it_now_code:B1%22%5D,%22MAKE%22:%5B%22lot_make_desc:%5C%22SUBARU%5C%22%22%5D,%22ODM%22:%5B%22odometer_reading_received:%5B0%20TO%2070000%5D%22%5D,%22TMTP%22:%5B%22transmission_type:%5C%22AUTOMATIC%5C%22%22%5D,%22YEAR%22:%5B%22lot_year:%5B2018%20TO%202027%5D%22%5D%7D,%22sort%22:%5B%22relevancy%20desc%22,%22auction_date_type%20desc%22,%22auction_date_utc%20asc%22%5D,%22watchListOnly%22:false,%22searchName%22:%22%22,%22freeFormSearch%22:false%7D",
+      "cron": "0 11 * * *",
+      "messageThreadId": 53201
     }
   ],
   "notifyWhenEmpty": false,
