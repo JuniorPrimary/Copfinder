@@ -99,10 +99,17 @@
     },
     {
       "label": "Jeep",
-      "url": "https://www.iaai.com/Search?url=fpLtlUHg2zfeEdjnKnR9K8Gwa88GNRgY6DLTwopfYKU%3d",
+      "url": "https://www.iaai.com/Search?url=qvb3YK%2bd6oyZpV%2bs9jMqCZAx6pRJNLR9QkLq88FhAAA%3d",
       "cron": "0 10 * * *",
       "messageThreadId": 11046
+    },
+    {
+      "label": "Subaru",
+      "url": "https://www.iaai.com/Search?url=KNU2RbnINMWu5XPaA4YdanmlP8K3Yz5mMulcetvltB4%3d",
+      "cron": "0 10 * * *",
+      "messageThreadId": 53201
     }
+    
   ],
   "notifyWhenEmpty": false,
   "runOnStartup": false,
