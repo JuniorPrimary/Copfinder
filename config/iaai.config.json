@@ -109,7 +109,6 @@
       "cron": "0 10 * * *",
       "messageThreadId": 53201
     }
-    
   ],
   "notifyWhenEmpty": false,
   "runOnStartup": false,
