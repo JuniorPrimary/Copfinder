@@ -2,7 +2,17 @@ import { chromium } from 'playwright';
 import { applyStealth } from '../utils/stealth.js';
 import { delay } from '../utils/delay.js';
 
-export async function fetchHtml(url, options = {}) {
+// Общая очередь для всех поисков Copart в этом процессе, включая повторы.
+let fetchQueue = Promise.resolve();
+
+export function fetchHtml(url, options = {}) {
+  const result = fetchQueue.then(() => fetchHtmlSequentially(url, options));
+  // Ошибка одного поиска не должна останавливать очередь.
+  fetchQueue = result.catch(() => {});
+  return result;
+}
+
+async function fetchHtmlSequentially(url, options = {}) {
   const {
     headless = true,
     maxScrollSteps = 5,
@@ -14,19 +24,23 @@ export async function fetchHtml(url, options = {}) {
   let lastError;
   
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const browser = await chromium.launch({ headless });
-    const context = await browser.newContext({
-      viewport: { width: 1366, height: 900 },
-      userAgent:
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-      proxy: proxy ? { server: proxy } : undefined,
-    });
-
-    await applyStealth(context);
-
-    const page = await context.newPage();
+    let browser;
+    let context;
+    let retryDelay;
 
     try {
+      browser = await chromium.launch({ headless });
+      context = await browser.newContext({
+        viewport: { width: 1366, height: 900 },
+        userAgent:
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        proxy: proxy ? { server: proxy } : undefined,
+      });
+
+      await applyStealth(context);
+
+      const page = await context.newPage();
+
       // Сначала загружаем страницу с базовым ожиданием
       await page.goto(url, {
         waitUntil: 'domcontentloaded', // Ждём загрузки DOM
@@ -106,9 +120,6 @@ export async function fetchHtml(url, options = {}) {
       // Получаем финальный HTML
       const html = await page.content();
       
-      await context.close();
-      await browser.close();
-      
       return html;
     } catch (error) {
       lastError = error;
@@ -131,11 +142,10 @@ export async function fetchHtml(url, options = {}) {
         errorMessage.includes('network') ||
         errorMessage.includes('connection') ||
         errorMessage.includes('timeout') ||
-        errorMessage.includes('Target page, context or browser has been closed');
+        errorMessage.includes('Target page, context or browser has been closed') ||
+        errorMessage.includes('Target crashed');
 
       if (!isRetryableError || attempt >= maxRetries) {
-        await context.close().catch(() => {});
-        await browser.close().catch(() => {});
         throw error;
       }
 
@@ -143,15 +153,16 @@ export async function fetchHtml(url, options = {}) {
         `[fetchHtml] Ошибка подключения (попытка ${attempt + 1}/${maxRetries + 1}): ${errorName} - ${errorMessage}`,
       );
 
-      await context.close().catch(() => {});
-      await browser.close().catch(() => {});
-
       // Экспоненциальная задержка перед повтором: 10, 20, 40 секунд
       // Увеличиваем задержки для таймаутов, чтобы дать серверу больше времени
-      const retryDelay = Math.min(10 * Math.pow(2, attempt), 60) * 1000;
+      retryDelay = Math.min(10 * Math.pow(2, attempt), 60) * 1000;
       console.log(`[fetchHtml] Повтор через ${retryDelay / 1000} секунд...`);
-      await delay(retryDelay);
+    } finally {
+      // Освобождаем браузер и при ошибке создания контекста/страницы.
+      await context?.close().catch(() => {});
+      await browser?.close().catch(() => {});
     }
+    await delay(retryDelay);
   }
 
   // Если дошли сюда, все попытки исчерпаны
